@@ -23,6 +23,8 @@ const data = [
     { option: "30", style: { backgroundColor: "#b81122", textColor: "white" } },
     { option: "8", style: { backgroundColor: "#090913", textColor: "white" } },
     { option: "23", style: { backgroundColor: "#b81122", textColor: "white" } },
+    { option: "26", style: { backgroundColor: "#090913", textColor: "white" } },
+    { option: "00", style: { backgroundColor: "green", textColor: "white" } },
     { option: "10", style: { backgroundColor: "#090913", textColor: "white" } },
     { option: "5", style: { backgroundColor: "#b81122", textColor: "white" } },
     { option: "24", style: { backgroundColor: "#090913", textColor: "white" } },
@@ -41,7 +43,6 @@ const data = [
     { option: "12", style: { backgroundColor: "#b81122", textColor: "white" } },
     { option: "35", style: { backgroundColor: "#090913", textColor: "white" } },
     { option: "3", style: { backgroundColor: "#b81122", textColor: "white" } },
-    { option: "26", style: { backgroundColor: "#090913", textColor: "white" } },
 ];
 type HeadingProps = {
     mustSpin: boolean;
@@ -66,6 +67,7 @@ const clientOnly = ({ mustSpin, prizeNumber, setMS }: HeadingProps) => {
                 //brown
                 radiusLineColor={"#f6a96d"}
                 radiusLineWidth={2}
+                startingOptionIndex={0}
                 onStopSpinning={setMS}
             />
         </div>

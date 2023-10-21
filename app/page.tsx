@@ -23,6 +23,8 @@ const data = [
     { option: "30", style: { backgroundColor: "#b81122", textColor: "white" } },
     { option: "8", style: { backgroundColor: "#090913", textColor: "white" } },
     { option: "23", style: { backgroundColor: "#b81122", textColor: "white" } },
+    { option: "26", style: { backgroundColor: "#090913", textColor: "white" } },
+    { option: "00", style: { backgroundColor: "green", textColor: "white" } },
     { option: "10", style: { backgroundColor: "#090913", textColor: "white" } },
     { option: "5", style: { backgroundColor: "#b81122", textColor: "white" } },
     { option: "24", style: { backgroundColor: "#090913", textColor: "white" } },
@@ -41,12 +43,12 @@ const data = [
     { option: "12", style: { backgroundColor: "#b81122", textColor: "white" } },
     { option: "35", style: { backgroundColor: "#090913", textColor: "white" } },
     { option: "3", style: { backgroundColor: "#b81122", textColor: "white" } },
-    { option: "26", style: { backgroundColor: "#090913", textColor: "white" } },
 ];
 
 export default function Home() {
     const [mustSpin, setMustSpin] = useState(false);
     const [prizeNumber, setPrizeNumber] = useState(0);
+    const [resultHistory, setResultHistory] = useState([0]);
 
     const handleSpinClick = () => {
         if (!mustSpin) {
@@ -72,6 +74,14 @@ export default function Home() {
         } else {
             return "黒";
         }
+    }
+    function spinEnd() {
+        setResultHistory([...resultHistory, prizeNumber]);
+    }
+    function sliceHistory() {
+        const rend = resultHistory.slice(-10);
+        const renda = rend.reverse();
+        return renda;
     }
     const showResult = () => {
         const a = data[prizeNumber];
@@ -127,7 +137,10 @@ export default function Home() {
                     <Wheel
                         mustSpin={mustSpin}
                         prizeNumber={prizeNumber}
-                        setMS={() => setMustSpin(false)}
+                        setMS={() => {
+                            setMustSpin(false);
+                            spinEnd();
+                        }}
                     />
                     <div className="spinbutton">
                         <button
@@ -148,6 +161,42 @@ export default function Home() {
                         </div>
                         <div className="text-gray-700 info-text font-bold">
                             抽選履歴
+                        </div>
+                        <div className="flex mb-4 justify-start flex-wrap">
+                            {sliceHistory().map((item) => {
+                                var a = data[item];
+                                var b = a.style.backgroundColor;
+                                if (b == "green")
+                                    return (
+                                        <React.Fragment key={item}>
+                                            <div className="w-1/6 bg-green-500 rounded-lg history">
+                                                <div className="text-gray-800 font-bold info-text">
+                                                    {a.option}
+                                                </div>
+                                            </div>
+                                        </React.Fragment>
+                                    );
+                                if (b == "#b81122")
+                                    return (
+                                        <React.Fragment key={item}>
+                                            <div className="w-1/6 bg-red-500 rounded-lg history">
+                                                <div className="text-gray-800 font-bold info-text">
+                                                    {a.option}
+                                                </div>
+                                            </div>
+                                        </React.Fragment>
+                                    );
+                                if (b == "#090913")
+                                    return (
+                                        <React.Fragment key={item}>
+                                            <div className="w-1/6 bg-gray-500 rounded-lg history">
+                                                <div className="text-gray-800 font-bold info-text">
+                                                    {a.option}
+                                                </div>
+                                            </div>
+                                        </React.Fragment>
+                                    );
+                            })}
                         </div>
                     </div>
                 </div>
