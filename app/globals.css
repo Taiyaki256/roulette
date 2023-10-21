@@ -30,11 +30,16 @@ body {
     height: 100%;
 }
 
+.game {
+    width: 100%;
+    height: 100%;
+}
+
 .wheel {
+    margin-left: 60px;
     position: relative;
     height: 100%;
     aspect-ratio: 1;
-    margin: 0 auto;
 }
 
 .wheel > div {
@@ -67,4 +72,24 @@ body {
 
 body::-webkit-scrollbar {
     display: none;
+}
+
+.right-panel {
+    width: 100%;
+    flex-direction: row;
+}
+.inner_right-panel {
+    height: 100%;
+}
+
+.spin-info {
+    height: 50%;
+}
+
+.info-text {
+    font-size: 80px;
+}
+.result {
+    margin-left: 20%;
+    margin-right: 20%;
 }

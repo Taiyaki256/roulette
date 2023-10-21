@@ -60,7 +60,7 @@ const clientOnly = ({ mustSpin, prizeNumber, setMS }: HeadingProps) => {
                 innerBorderWidth={14}
                 outerBorderWidth={5}
                 outerBorderColor={"#000000"}
-                fontSize={13}
+                fontSize={17}
                 textDistance={78}
                 perpendicularText={true}
                 //brown
