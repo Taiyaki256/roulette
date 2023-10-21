@@ -159,7 +159,7 @@ export default function Home() {
                             </div>
                             {showResult()}
                         </div>
-                        <div className="text-gray-700 info-text font-bold">
+                        {/* <div className="text-gray-700 info-text font-bold">
                             抽選履歴
                         </div>
                         <div className="flex mb-4 justify-start flex-wrap">
@@ -197,7 +197,7 @@ export default function Home() {
                                         </React.Fragment>
                                     );
                             })}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
