@@ -24,15 +24,17 @@ export default function Home() {
 
     return (
         <>
-            <Wheel
-                mustStartSpinning={mustSpin}
-                prizeNumber={prizeNumber}
-                data={data}
-                onStopSpinning={() => {
-                    setMustSpin(false);
-                }}
-            />
-            <button onClick={handleSpinClick}>SPIN</button>
+            <div className="wheel">
+                <Wheel
+                    mustStartSpinning={mustSpin}
+                    prizeNumber={prizeNumber}
+                    data={data}
+                    onStopSpinning={() => {
+                        setMustSpin(false);
+                    }}
+                />
+                <button onClick={handleSpinClick}>SPIN</button>
+            </div>
         </>
     );
 }
