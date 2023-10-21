@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
 
-import { Wheel } from "react-custom-roulette";
+import dynamic from "next/dynamic";
+
+const Wheel = dynamic(() => import("./wheel"), { ssr: false });
 
 const data = [
     { option: "0", style: { backgroundColor: "green", textColor: "white" } },
@@ -27,33 +29,13 @@ export default function Home() {
         }
     };
 
-    const wheel = () => {
-        if (typeof window !== "undefined") {
-            return (
-                <div className="wheel">
-                    <Wheel
-                        mustStartSpinning={mustSpin}
-                        prizeNumber={prizeNumber}
-                        data={data}
-                        innerRadius={17}
-                        innerBorderColor={"#000000"}
-                        innerBorderWidth={5}
-                        outerBorderWidth={7}
-                        outerBorderColor={"#000000"}
-                        //brown
-                        radiusLineColor={"#8B4513"}
-                        onStopSpinning={() => {
-                            setMustSpin(false);
-                        }}
-                    />
-                </div>
-            );
-        }
-    };
-
     return (
         <>
-            {wheel()}
+            <Wheel
+                mustSpin={mustSpin}
+                prizeNumber={prizeNumber}
+                setMS={() => setMustSpin(false)}
+            />
             <div className="spinbutton">
                 <button
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
