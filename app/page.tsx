@@ -75,6 +75,41 @@ export default function Home() {
             return "黒";
         }
     }
+    function oddEven(a: string) {
+        const num = Number(a);
+        if (num % 2 == 0) {
+            return "偶数(Even)";
+        } else {
+            return "奇数(Odd)";
+        }
+    }
+    function twelve(a: string) {
+        const num = Number(a);
+        if (num <= 12) {
+            return "1st 12";
+        }
+        if (num <= 24) {
+            return "2nd 12";
+        }
+        if (num <= 36) {
+            return "3rd 12";
+        }
+        return "null";
+    }
+    function twoToOne(a: string) {
+        const num = Number(a);
+        if (num % 3 == 1) {
+            return "Bottom 2to1";
+        }
+        if (num % 3 == 2) {
+            return "Middle 2to1";
+        }
+        if (num % 3 == 0) {
+            return "Top 2to1";
+        }
+        return "null";
+    }
+
     function spinEnd() {
         setResultHistory([...resultHistory, prizeNumber]);
     }
@@ -110,6 +145,15 @@ export default function Home() {
                             <div className="text-gray-800 font-bold info-text">
                                 {a.option} {color(b)}
                             </div>
+                            <div className="text-gray-800 font-bold info-text">
+                                {oddEven(a.option)}
+                            </div>
+                            <div className="text-gray-800 font-bold info-text">
+                                {twelve(a.option)}
+                            </div>
+                            <div className="text-gray-800 font-bold info-text">
+                                {twoToOne(a.option)}
+                            </div>
                         </div>
                     </>
                 );
@@ -122,6 +166,15 @@ export default function Home() {
                             </div>
                             <div className="text-gray-800 font-bold info-text">
                                 {a.option} {color(b)}
+                            </div>
+                            <div className="text-gray-800 font-bold info-text">
+                                {oddEven(a.option)}
+                            </div>
+                            <div className="text-gray-800 font-bold info-text">
+                                {twelve(a.option)}
+                            </div>
+                            <div className="text-gray-800 font-bold info-text">
+                                {twoToOne(a.option)}
                             </div>
                         </div>
                     </>
