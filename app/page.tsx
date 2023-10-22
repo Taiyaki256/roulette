@@ -176,7 +176,7 @@ export default function Home() {
                                 {a.option} {color(b)}
                             </div>
                             <div className="text-gray-800 font-bold info-text">
-                                {oddEven(a.option)}
+                                {oddEven(a.option)} {half(a.option)}
                             </div>
                             <div className="text-gray-800 font-bold info-text">
                                 {twelve(a.option)}
