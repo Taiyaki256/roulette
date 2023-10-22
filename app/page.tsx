@@ -78,9 +78,17 @@ export default function Home() {
     function oddEven(a: string) {
         const num = Number(a);
         if (num % 2 == 0) {
-            return "偶数(Even)";
+            return "偶数";
         } else {
-            return "奇数(Odd)";
+            return "奇数";
+        }
+    }
+    function half(a: string) {
+        const num = Number(a);
+        if (num <= 18) {
+            return "1-18";
+        } else {
+            return "19-36";
         }
     }
     function twelve(a: string) {
@@ -146,7 +154,7 @@ export default function Home() {
                                 {a.option} {color(b)}
                             </div>
                             <div className="text-gray-800 font-bold info-text">
-                                {oddEven(a.option)}
+                                {oddEven(a.option)} {half(a.option)}
                             </div>
                             <div className="text-gray-800 font-bold info-text">
                                 {twelve(a.option)}
