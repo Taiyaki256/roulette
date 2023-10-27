@@ -94,26 +94,26 @@ export default function Home() {
     function twelve(a: string) {
         const num = Number(a);
         if (num <= 12) {
-            return "1st 12";
+            return "1-12";
         }
         if (num <= 24) {
-            return "2nd 12";
+            return "13-24";
         }
         if (num <= 36) {
-            return "3rd 12";
+            return "25-36";
         }
         return "null";
     }
     function twoToOne(a: string) {
         const num = Number(a);
         if (num % 3 == 1) {
-            return "Bottom 2to1";
+            return "3列目";
         }
         if (num % 3 == 2) {
-            return "Middle 2to1";
+            return "2列目";
         }
         if (num % 3 == 0) {
-            return "Top 2to1";
+            return "1列目";
         }
         return "null";
     }
@@ -150,16 +150,19 @@ export default function Home() {
                             <div className="text-gray-800 font-bold info-text">
                                 抽選結果
                             </div>
-                            <div className="text-gray-800 font-bold info-text">
+                            <div className="text-gray-800 font-bold info-text-2">
                                 {a.option} {color(b)}
                             </div>
-                            <div className="text-gray-800 font-bold info-text">
-                                {oddEven(a.option)} {half(a.option)}
+                            <div className="text-gray-800 font-bold info-text-2">
+                                {oddEven(a.option)}
                             </div>
-                            <div className="text-gray-800 font-bold info-text">
+                            <div className="text-gray-800 font-bold info-text-2">
+                                {half(a.option)}
+                            </div>
+                            <div className="text-gray-800 font-bold info-text-2">
                                 {twelve(a.option)}
                             </div>
-                            <div className="text-gray-800 font-bold info-text">
+                            <div className="text-gray-800 font-bold info-text-2">
                                 {twoToOne(a.option)}
                             </div>
                         </div>
@@ -172,16 +175,19 @@ export default function Home() {
                             <div className="text-gray-800 font-bold info-text">
                                 抽選結果
                             </div>
-                            <div className="text-gray-800 font-bold info-text">
+                            <div className="text-gray-800 font-bold info-text-2">
                                 {a.option} {color(b)}
                             </div>
-                            <div className="text-gray-800 font-bold info-text">
-                                {oddEven(a.option)} {half(a.option)}
+                            <div className="text-gray-800 font-bold info-text-2">
+                                {oddEven(a.option)}
                             </div>
-                            <div className="text-gray-800 font-bold info-text">
+                            <div className="text-gray-800 font-bold info-text-2">
+                                {half(a.option)}
+                            </div>
+                            <div className="text-gray-800 font-bold info-text-2">
                                 {twelve(a.option)}
                             </div>
-                            <div className="text-gray-800 font-bold info-text">
+                            <div className="text-gray-800 font-bold info-text-2">
                                 {twoToOne(a.option)}
                             </div>
                         </div>

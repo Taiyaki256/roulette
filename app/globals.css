@@ -91,6 +91,9 @@ body::-webkit-scrollbar {
 .info-text {
     font-size: 3.7rem;
 }
+.info-text-2 {
+    font-size: 3.2rem;
+}
 .result {
     margin-left: 20%;
     margin-right: 20%;
